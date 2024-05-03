@@ -1,0 +1,23 @@
+env_name: Reach
+expert_folder: human_demonstrations
+robots: Panda
+controller_type: JOINT_VELOCITY
+total_timesteps: 200000
+batch_size: 256
+robot_obs_keys:
+  - robot0_joint_pos_cos
+  - robot0_joint_pos_sin
+obj_obs_keys:
+  - target_to_robot0_eef_pos
+lat_obs_dim: 4
+lat_act_dim: 4
+env_kwargs:
+  horizon: 200
+  table_full_size: [0.6, 0.6, 0.05]
+evaluation:
+  interval: 10000
+  save_interval: 20000
+seed: 42
+save_buffer: False
+logdir_prefix: null
+suffix: TD3

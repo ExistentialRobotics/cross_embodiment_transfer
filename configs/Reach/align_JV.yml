@@ -1,0 +1,36 @@
+env_name: Reach
+env_kwargs:
+  horizon: 200
+  table_full_size: [0.6, 0.6, 0.05]
+src_env:
+  robot: Panda
+  controller_type: JOINT_VELOCITY
+  robot_obs_keys:
+    - robot0_joint_pos_cos
+    - robot0_joint_pos_sin
+  obj_obs_keys:
+    - target_to_robot0_eef_pos
+tgt_env:
+  robot: Sawyer
+  controller_type: JOINT_VELOCITY
+  robot_obs_keys:
+    - robot0_joint_pos_cos
+    - robot0_joint_pos_sin
+  obj_obs_keys:
+    - target_to_robot0_eef_pos
+src_buffer: human_demonstrations/Reach/Panda/JOINT_VELOCITY
+tgt_buffer: human_demonstrations/Reach/Sawyer/JOINT_VELOCITY
+lat_obs_dim: 4
+lat_act_dim: 4
+tgt_align_timesteps: 200000
+batch_size: 512
+src_model_dir: logs/04.29.2024/18-44-10_Reach_Panda_JOINT_VELOCITY_BC_obs_act_no_bn/models/step_0180000
+seed: 42
+save_buffer: False
+logdir_prefix: null
+log_freq: 1000
+evaluation:
+  interval: 2000
+  save_interval: 20000
+save_freq: 50000
+suffix: align_cycle
