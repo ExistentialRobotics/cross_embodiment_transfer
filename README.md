@@ -35,3 +35,9 @@ python3 visualize.py --config configs/Sawyer/eval.yml
 ```
 
 ![Sawyer](assets/Sawyer.gif)
+
+
+
+# Acknowledgements
+
+We gratefully acknowledge support from the Technology Innovation Program (20018112, Development of autonomous manipulation and gripping technology using imitation learning based on visual and tactile sensing) funded by the Ministry of Trade, Industry & Energy (MOTIE), Korea.
